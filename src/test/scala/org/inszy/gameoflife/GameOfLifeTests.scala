@@ -1,8 +1,8 @@
 package org.inszy.gameoflife
 
 import org.scalatest.junit.JUnitRunner
-import org.junit.runner.{RunWith, Runner}
-import org.scalatest.{Suite, SuperSuite}
+import org.junit.runner.RunWith
+import org.scalatest.SuperSuite
 
 /**
  * Created by IntelliJ IDEA.
@@ -15,5 +15,6 @@ import org.scalatest.{Suite, SuperSuite}
 class GameOfLifeTests
   extends SuperSuite(List(
     new BoardTest(),
-    new CellTest()
+    new CellTest(),
+    new BoardPrinterTest()
   ))

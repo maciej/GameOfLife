@@ -227,6 +227,13 @@
       </item>
     </group>
   </component>
+  <component name="ProjectDictionaryState">
+    <dictionary name="maciejbias">
+      <words>
+        <w>iter</w>
+      </words>
+    </dictionary>
+  </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
       <profile-state />
@@ -341,6 +348,9 @@
       <Port>5050</Port>
     </configuration>
   </component>
+  <component name="ScalacSettings">
+    <option name="SERVER_RESET" value="true" />
+  </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="SvnConfiguration" maxAnnotateRevisions="500">
     <option name="USER" value="" />
@@ -358,7 +368,7 @@
     <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
   </component>
   <component name="VcsDirectoryMappings">
-    <mapping directory="" vcs="" />
+    <mapping directory="" vcs="Git" />
   </component>
   <component name="libraryTable">
     <library name="Maven: junit:junit:4.8.1">

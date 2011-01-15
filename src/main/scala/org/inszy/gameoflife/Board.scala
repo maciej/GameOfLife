@@ -22,6 +22,15 @@ class Board private[Board](private[gameoflife] val cells: Set[Cell]) {
     val liveNeighbours = boardCell.liveNeighbourCount
     (boardCell.isAlive && liveNeighbours == 2) || liveNeighbours == 3
   }))
+
+  def boundingBox = {
+    import math.{min, max}
+    // xMin, yMin, xMax, yMax
+    cells.foldLeft(Rectangle(Int.MinValue, Int.MinValue, Int.MaxValue, Int.MaxValue))((acc, cell) => {
+      Rectangle(min(acc.x1, cell.x), min(acc.y1, cell.y), max(acc.x2, cell.x), max(acc.y2, cell.y))
+    })
+  }
+
 }
 
 case class Cell(x: Int, y: Int) {

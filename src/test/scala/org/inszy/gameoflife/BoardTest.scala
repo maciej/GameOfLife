@@ -38,6 +38,12 @@ class BoardTest extends FunSuite with ShouldMatchers {
     nextBoard.isCellAlive(Cell(-1, 0)) === false
     nextBoard.isCellAlive(Cell(1, 0)) === false
   }
+
+  test("bounding box should be formed from edge points") {
+    val b = Board(Cell(-1, -2), Cell(1, 2))
+
+    b.boundingBox === Rectangle(-1, -2, 1, 2)
+  }
 }
 
 @RunWith(classOf[JUnitRunner])
