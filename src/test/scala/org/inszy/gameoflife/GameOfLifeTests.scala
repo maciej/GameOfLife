@@ -16,5 +16,6 @@ class GameOfLifeTests
   extends SuperSuite(List(
     new BoardTest(),
     new CellTest(),
-    new BoardPrinterTest()
+    new BoardPrinterTest(),
+    new BoardReaderTest()
   ))
