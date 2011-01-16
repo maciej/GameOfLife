@@ -44,6 +44,11 @@ class BoardTest extends FunSuite with ShouldMatchers {
 
     b.boundingBox === Rectangle(-1, -2, 1, 2)
   }
+
+  test("bounding box should be sane (0,0,0,0) if no cells are present") {
+    val b = Board()
+    b.boundingBox === Rectangle(0, 0, 0, 0)
+  }
 }
 
 @RunWith(classOf[JUnitRunner])

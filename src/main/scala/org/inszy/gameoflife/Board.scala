@@ -11,7 +11,7 @@ object Board {
   def apply(cells: Cell*) = new Board(cells.toSet)
 }
 
-class Board private[Board](private[gameoflife] val cells: Set[Cell]) {
+class Board private[gameoflife](private[gameoflife] val cells: Set[Cell]) {
 
   def isCellAlive(c: Cell) = cells.contains(c)
 
@@ -24,11 +24,15 @@ class Board private[Board](private[gameoflife] val cells: Set[Cell]) {
   }))
 
   def boundingBox = {
-    import math.{min, max}
-    // xMin, yMin, xMax, yMax
-    cells.foldLeft(Rectangle(Int.MinValue, Int.MinValue, Int.MaxValue, Int.MaxValue))((acc, cell) => {
-      Rectangle(min(acc.x1, cell.x), min(acc.y1, cell.y), max(acc.x2, cell.x), max(acc.y2, cell.y))
-    })
+    if (cells.isEmpty)
+      Rectangle(0, 0, 0, 0)
+    else {
+      import math.{min, max}
+      // xMin, yMin, xMax, yMax
+      cells.foldLeft(Rectangle(Int.MinValue, Int.MinValue, Int.MaxValue, Int.MaxValue))((acc, cell) => {
+        Rectangle(min(acc.x1, cell.x), min(acc.y1, cell.y), max(acc.x2, cell.x), max(acc.y2, cell.y))
+      })
+    }
   }
 
 }
